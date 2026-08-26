@@ -36,8 +36,7 @@ node_modules/
 package-lock.json
 npm-debug.log
 
-# Tailwind CSS build output (собирается автоматически)
-task_manager/static/css/output.css
+#task_manager/static/css/output.css
 
 # .python-version
 .python-version
