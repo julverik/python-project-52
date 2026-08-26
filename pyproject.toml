@@ -1,0 +1,25 @@
+[project]
+name = "python-project-52"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "zxcwave", email = "90509123+julverik@users.noreply.github.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "dj-database-url>=3.1.2",
+    "django>=6.1",
+    "django-filter>=26.1",
+    "gunicorn>=26.2.0",
+    "psycopg2-binary>=2.9.12",
+    "python-dotenv>=1.2.3",
+    "whitenoise>=6.12.0",
+]
+
+[project.scripts]
+python-project-52 = "python_project_52:main"
+
+[build-system]
+requires = ["uv_build>=0.12.6,<0.13.0"]
+build-backend = "uv_build"
