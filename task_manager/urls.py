@@ -1,8 +1,8 @@
-from django.contrib import admin
 from django.urls import path
-from task_manager import views
+from . import views
+
+app_name = 'task_manager'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.index, name='index'),
 ]
