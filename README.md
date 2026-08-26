@@ -7,6 +7,10 @@
 Учебный проект Хекслета: https://ru.hexlet.io/programs/python
 Как это должно работать: https://files.hexlet.app/a/0rkpse
 
+## Демо
+
+Приложение доступно по адресу: **https://python-project-52-6948.onrender.com**
+
 ## Стек
 
 - **Python** 3.14
