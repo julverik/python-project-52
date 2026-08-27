@@ -8,11 +8,9 @@ apt-get install -y nodejs
 make install
 npm install
 
-ls -la task_manager/static/css/input.css
 uv run python manage.py tailwind build
-ls -la task_manager/static/css/output.css
-
 make collectstatic
 
+# Миграции
 uv run python manage.py migrate users
 uv run python manage.py migrate
