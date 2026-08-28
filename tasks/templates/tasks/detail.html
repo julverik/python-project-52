@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold mb-6">{{ task.name }}</h1>
+    
+    {% if task.description %}
+    <div class="mb-6">
+        <p class="text-gray-700">{{ task.description }}</p>
+    </div>
+    {% endif %}
+    
+    <dl class="divide-y divide-gray-200">
+        <div class="py-4 grid grid-cols-3 gap-4">
+            <dt class="font-medium text-gray-500">Автор</dt>
+            <dd class="col-span-2 text-gray-900">{{ task.author.username }}</dd>
+        </div>
+        <div class="py-4 grid grid-cols-3 gap-4">
+            <dt class="font-medium text-gray-500">Исполнитель</dt>
+            <dd class="col-span-2 text-gray-900">{{ task.executor.username|default:"-" }}</dd>
+        </div>
+        <div class="py-4 grid grid-cols-3 gap-4">
+            <dt class="font-medium text-gray-500">Статус</dt>
+            <dd class="col-span-2 text-gray-900">{{ task.status.name }}</dd>
+        </div>
+        <div class="py-4 grid grid-cols-3 gap-4">
+            <dt class="font-medium text-gray-500">Дата создания</dt>
+            <dd class="col-span-2 text-gray-900">{{ task.created_at|date:"d.m.Y H:i" }}</dd>
+        </div>
+    </dl>
+    
+    <div class="mt-6 flex space-x-4">
+        <a href="{% url 'tasks:update' task.id %}" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-200">
+            Изменить
+        </a>
+        <a href="{% url 'tasks:delete' task.id %}" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition duration-200">
+            Удалить
+        </a>
+        <a href="{% url 'tasks:tasks' %}" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-6 rounded-lg transition duration-200">
+            Назад
+        </a>
+    </div>
+</div>
+{% endblock %}

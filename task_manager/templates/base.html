@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/output.css' %}">
 </head>
 <body class="bg-gray-100 min-h-screen">
-    <!-- Flash сообщения - -->
+    <!-- Flash сообщения - СВЕРХУ -->
     {% if messages %}
     <div class="container mx-auto px-4 pt-4">
         {% for message in messages %}
@@ -34,6 +34,9 @@
                     </a>
                     <a href="{% url 'statuses:statuses' %}" class="flex items-center text-gray-700 hover:text-gray-900">
                         Статусы
+                    </a>
+                    <a href="{% url 'tasks:tasks' %}" class="flex items-center text-gray-700 hover:text-gray-900">
+                        Задачи
                     </a>
                 </div>
                 <div class="flex space-x-4 items-center">
