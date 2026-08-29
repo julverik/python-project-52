@@ -9,6 +9,43 @@
         </a>
     </div>
     
+    <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <form method="get" class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+            <div>
+                <label for="{{ filter.form.status.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                    {{ filter.form.status.label }}
+                </label>
+                {{ filter.form.status }}
+            </div>
+            <div>
+                <label for="{{ filter.form.executor.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                    {{ filter.form.executor.label }}
+                </label>
+                {{ filter.form.executor }}
+            </div>
+            <div>
+                <label for="{{ filter.form.labels.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                    {{ filter.form.labels.label }}
+                </label>
+                {{ filter.form.labels }}
+            </div>
+            <div class="flex items-end space-x-2">
+                <div class="flex items-center">
+                    {{ filter.form.self_tasks }}
+                    <label for="{{ filter.form.self_tasks.id_for_label }}" class="ml-2 text-sm font-medium text-gray-700">
+                        {{ filter.form.self_tasks.label }}
+                    </label>
+                </div>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200">
+                    Показать
+                </button>
+                <a href="{% url 'tasks:tasks' %}" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-4 rounded-lg transition duration-200">
+                    Сбросить
+                </a>
+            </div>
+        </form>
+    </div>
+    
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
         <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
