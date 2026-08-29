@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
 from django.db import models
-
 from labels.models import Label
 from statuses.models import Status
 

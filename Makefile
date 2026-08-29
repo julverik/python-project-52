@@ -1,3 +1,9 @@
+setup:
+	make install
+	make migrate
+	make collectstatic
+	make tailwind-build
+
 install:
 	uv sync
 
@@ -6,6 +12,9 @@ migrate:
 
 collectstatic:
 	uv run python manage.py collectstatic --noinput
+
+tailwind-build:
+	uv run python manage.py tailwind build
 
 build:
 	./build.sh
@@ -17,8 +26,14 @@ dev:
 	uv run python manage.py runserver
 
 test:
-	uv run python manage.py test
+	PYTHONPATH=./src/hexlet_code uv run python manage.py test users statuses tasks labels
 
 lint:
 	uv run ruff check .
 	uv run ruff format --check .
+
+format:
+	uv run ruff format .
+	uv run ruff check --fix .
+
+.PHONY: setup install migrate collectstatic tailwind-build build render-start dev test lint format
