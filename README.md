@@ -2,6 +2,10 @@
 
 [![hexlet-check](https://github.com/julverik/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/julverik/python-project-52/actions)
 
+[![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=julverik_python-project-52&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=julverik_python-project-52)
+
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=julverik_python-project-52&metric=coverage)](https://sonarcloud.io/summary/new_code?id=julverik_python-project-52)
+
 На практике узнаете о проектировании баз данных, PaaS, мониторинге ошибок, ORM, фреймворке Django, шаблонизации и Tailwind CSS.
 
 Учебный проект Хекслета: https://ru.hexlet.io/programs/python
@@ -33,20 +37,21 @@
 
 ### Клонирование репозитория
 
-```bash
-git clone https://github.com/julverik/python-project-52.git
-cd python-project-52
-
-<!-- Опишите установку: клонирование, зависимости, переменные окружения -->
+## Установка и запуск
 
 ```bash
 git clone https://github.com/julverik/python-project-52.git
 cd python-project-52
-```
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source $HOME/.local/bin/env
+make install
+npm install
+cp .env.example .env 2>/dev/null || echo "SECRET_KEY=$(uv run python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')\nDEBUG=True\nDATABASE_URL=sqlite:///db.sqlite3" > .env
+uv run python manage.py tailwind build
+uv run python manage.py migrate
+uv run python manage.py createsuperuser
+make dev
 
-## Использование
-
-<!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
 
 ---
 
