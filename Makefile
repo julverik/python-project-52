@@ -1,3 +1,4 @@
+cat > Makefile << 'EOF'
 setup:
 	make install
 	make migrate
@@ -37,3 +38,4 @@ format:
 	uv run ruff check --fix .
 
 .PHONY: setup install migrate collectstatic tailwind-build build render-start dev test lint format
+EOF

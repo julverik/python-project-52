@@ -36,7 +36,7 @@ SECRET_KEY = os.getenv(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = ["webserver", "localhost", "127.0.0.1", ".onrender.com"]
+ALLOWED_HOSTS = ["webserver", "localhost", "127.0.0.1", ".onrender.com", "*"]
 
 # Sentry / Bugsink
 SENTRY_DSN = os.getenv("SENTRY_DSN")
