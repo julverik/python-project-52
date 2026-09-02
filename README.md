@@ -13,7 +13,7 @@
 
 ## Демо
 
-Приложение доступно по адресу: **https://python-project-52-6948.onrender.com**
+Приложение доступно по адресу: **https://python-project-52-new.onrender.com**
 
 ## Стек
 

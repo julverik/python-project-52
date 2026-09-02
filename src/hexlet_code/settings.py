@@ -33,7 +33,6 @@ SECRET_KEY = os.getenv(
     "SECRET_KEY", "django-insecure-79q8d2rk%d4+06afi5juniba$c%*t96po8j!i7%_h*)^i0e4hw"
 )
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = ["webserver", "localhost", "127.0.0.1", ".onrender.com", "*"]
@@ -90,10 +89,6 @@ AUTH_USER_MODEL = "users.User"
 # Password validation
 AUTH_PASSWORD_VALIDATORS = []
 
-PASSWORD_HASHERS = [
-    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
-]
-
 # Flash сообщения
 MESSAGE_TAGS = {
     messages.DEBUG: "debug",
@@ -133,9 +128,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/6.1/topics/i18n/
 
-LANGUAGE_CODE = "ru-ru"  # меняем на русский
+LANGUAGE_CODE = "ru-ru"
 
-TIME_ZONE = "Europe/Moscow"  # меняем на Московское время
+TIME_ZONE = "Europe/Moscow"
 
 USE_I18N = True
 
