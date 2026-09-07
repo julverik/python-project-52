@@ -149,7 +149,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "dj-database-url", specifier = ">=3.1.2" },
-    { name = "django", specifier = ">=5.2.8" },
+    { name = "django", specifier = ">=5.2,<6.0" },
     { name = "django-filter", specifier = ">=26.1" },
     { name = "django-tailwind-cli", specifier = ">=4.7.0" },
     { name = "gunicorn", specifier = ">=26.2.0" },
