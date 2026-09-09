@@ -20,13 +20,13 @@ build:
 	./build.sh
 
 render-start:
-	gunicorn hexlet_code.wsgi
+	gunicorn task_manager.wsgi
 
 dev:
 	uv run python manage.py runserver
 
 test:
-	PYTHONPATH=./src/hexlet_code uv run python manage.py test users statuses tasks labels
+	uv run python manage.py test users statuses tasks labels
 
 lint:
 	uv run ruff check .

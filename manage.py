@@ -4,12 +4,11 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src", "hexlet_code"))
-
 
 def main():
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hexlet_code.settings")
+    """Run administrative tasks."""
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "task_manager.settings")
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -18,6 +17,7 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+
     execute_from_command_line(sys.argv)
 
 

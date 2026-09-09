@@ -26,6 +26,10 @@ python-project-52 = "python_project_52:main"
 requires = ["uv_build>=0.12.6,<0.13.0"]
 build-backend = "uv_build"
 
+[tool.uv.build-backend]
+module-name = "task_manager"
+module-root = "."
+
 [dependency-groups]
 dev = [
     "ruff>=0.16.5",
