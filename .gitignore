@@ -40,3 +40,6 @@ npm-debug.log
 
 # .python-version
 .python-version
+
+.coverage
+coverage.xml

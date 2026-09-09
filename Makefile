@@ -28,6 +28,10 @@ dev:
 test:
 	uv run python manage.py test users statuses tasks labels
 
+test-coverage:
+	uv run coverage run --source=. manage.py test users statuses tasks labels
+	uv run coverage xml
+
 lint:
 	uv run ruff check .
 	uv run ruff format --check .
@@ -36,4 +40,4 @@ format:
 	uv run ruff format .
 	uv run ruff check --fix .
 
-.PHONY: setup install migrate collectstatic tailwind-build build render-start dev test lint format
+.PHONY: setup install migrate collectstatic tailwind-build build render-start dev test test-coverage lint format

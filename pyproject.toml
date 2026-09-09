@@ -32,6 +32,7 @@ module-root = "."
 
 [dependency-groups]
 dev = [
+    "coverage>=7.16.0",
     "ruff>=0.16.5",
 ]
 
